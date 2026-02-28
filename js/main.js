@@ -1,0 +1,2 @@
+
+  const mixer = mixitup('.target');
