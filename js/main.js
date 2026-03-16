@@ -11,6 +11,28 @@ $('.team_slider').slick({
   infinite: true,
   draggable: false,
   waitForAnimate: false,
+  responsive:
+    [
+      {
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 750,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 550,
+        settings: {
+          slidesToShow: 1,
+          draggable: true,
+        }
+      }
+    ],
 })
 
 
@@ -28,7 +50,8 @@ $('.testimonials_slider').slick({
   arrows: false,
   dots: true,
   waitForAnimate: false,
-  appendDots: $('.testimonials_dots')
+  appendDots: $('.testimonials_dots'),
+  
 })
 
 $('.testimonials_prev').on('click', function (e) {
@@ -41,9 +64,23 @@ $('.testimonials_next').on('click', function (e) {
   $('.testimonials_slider').slick('slickNext')
 })
 
-$('.program_acc-link').on('click', function(e){
+$('.program_acc-link').on('click', function (e) {
   e.preventDefault()
   $(this).toggleClass('program_acc-link--active')
   $(this).children('.program_acc-text').slideToggle()
 })
 
+
+setInterval(() => {
+  if ($(window).scrollTop() > 0 && $('.header_top').hasClass('header_top--open') === false) {
+    $('.burger').addClass('burger--follow')
+  } else (
+    $('.burger').removeClass('burger--follow')
+  )
+}, 0)
+
+$('.burger, .overlay').on('click', function (e) {
+  e.preventDefault()
+  $('.header_top').toggleClass('header_top--open')
+  $('.overlay').toggleClass('overlay--show')
+})
