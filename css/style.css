@@ -82,6 +82,10 @@ html, body {
   padding-bottom: 180px;
 }
 
+.main_info {
+  padding-bottom: 180px;
+}
+
 .button {
   display: inline-block;
   letter-spacing: 0.5px;
