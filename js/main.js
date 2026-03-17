@@ -84,3 +84,7 @@ $('.burger, .overlay').on('click', function (e) {
   $('.header_top').toggleClass('header_top--open')
   $('.overlay').toggleClass('overlay--show')
 })
+
+$('.footer_top-title').on('click', function () {
+  $(this).next().slideToggle()
+})
